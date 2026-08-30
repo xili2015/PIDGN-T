@@ -1,0 +1,198 @@
+# ============================================================
+# PIDGN-T Model Configuration
+# ============================================================
+
+
+model:
+
+  name: "PIDGN-T"
+
+
+
+# ============================================================
+# Modality-Specific Encoders
+# ============================================================
+
+
+encoders:
+
+
+  # -------------------------
+  # Genomic Encoder
+  # -------------------------
+
+  genomic:
+
+    type: "Denoising Autoencoder"
+
+    input_dimension: 20000
+
+    latent_dimension: 128
+
+    activation: "ReLU"
+
+    dropout: 0.3
+
+    regularization:
+      l2_weight: 0.0001
+
+
+
+  # -------------------------
+  # MRI Encoder
+  # -------------------------
+
+  imaging:
+
+    type: "3D-ResNet"
+
+    input_channels: 1
+
+    backbone: "3D-ResNet18"
+
+    feature_dimension: 256
+
+    normalization:
+      batch_norm: true
+
+    residual_connections: true
+
+
+
+  # -------------------------
+  # Clinical Encoder
+  # -------------------------
+
+  clinical:
+
+    type: "Bidirectional LSTM"
+
+    input_features: 32
+
+    hidden_dimension: 128
+
+    num_layers: 2
+
+    bidirectional: true
+
+    dropout: 0.3
+
+
+
+# ============================================================
+# Graph Construction
+# ============================================================
+
+
+graph:
+
+
+  gene_graph:
+
+    type: "Biological Interaction Graph"
+
+    databases:
+
+      - STRING
+
+      - KEGG
+
+      - BioGRID
+
+
+    gcn_layers: 2
+
+    node_dimension: 128
+
+
+
+  brain_graph:
+
+    type: "Brain Connectome Graph"
+
+    atlas:
+      "AAL"
+
+    gcn_layers: 2
+
+    node_dimension: 256
+
+
+
+
+# ============================================================
+# Cross Modal Graph Attention Fusion
+# ============================================================
+
+
+cm_gaf:
+
+
+  enabled: true
+
+  attention_heads: 8
+
+  projection_dimension: 128
+
+  activation: "GELU"
+
+  dropout: 0.2
+
+  consistency_loss: true
+
+
+
+# ============================================================
+# Temporal Graph Neural Network
+# ============================================================
+
+
+tgnn:
+
+
+  type: "GCN-GRU"
+
+
+  temporal_steps: 5
+
+
+  hidden_dimension: 256
+
+
+  graph_layers: 2
+
+
+  temporal_attention:
+
+    enabled: true
+
+    attention_dimension: 128
+
+
+
+# ============================================================
+# Explainability
+# ============================================================
+
+
+explainability:
+
+
+  shap_gnn:
+
+    enabled: true
+
+    sampling: "Monte-Carlo"
+
+
+  gradcam:
+
+    enabled: true
+
+    target_layer:
+      "last_conv_layer"
+
+
+  temporal_saliency:
+
+    enabled: true
