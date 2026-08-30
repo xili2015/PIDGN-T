@@ -1,0 +1,40 @@
+name: pidgn-t
+
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+
+dependencies:
+
+  - python=3.10
+
+  - pytorch=2.0
+  - torchvision
+  - torchaudio
+
+  - cudatoolkit=11.8
+
+  - numpy
+  - pandas
+  - scipy
+
+  - scikit-learn
+
+  - networkx
+
+  - matplotlib
+
+  - pyyaml
+
+  - tqdm
+
+  - jupyter
+
+  - pip
+
+  - pip:
+      - torch-geometric
+      - shap
+      - nibabel
+      - opencv-python
