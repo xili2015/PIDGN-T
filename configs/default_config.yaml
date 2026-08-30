@@ -1,0 +1,113 @@
+# ============================================================
+# PIDGN-T Default Configuration
+# Explainable Temporal Graph Learning for Multimodal
+# Neurogenetic Data Integration in Early Parkinson's Disease Prediction
+# ============================================================
+
+
+# -----------------------------
+# Project Information
+# -----------------------------
+
+project:
+  name: "PIDGN-T"
+  task: "Early Parkinson Disease Prediction"
+  framework: "Multimodal Temporal Graph Learning"
+
+
+# -----------------------------
+# Dataset Configuration
+# -----------------------------
+
+dataset:
+
+  name: "PPMI"
+
+  modalities:
+    genomic: true
+    mri: true
+    clinical: true
+    behavioral: true
+
+  longitudinal: true
+
+  num_classes: 2
+
+  class_labels:
+    0: "Control"
+    1: "Parkinson Disease"
+
+
+
+# -----------------------------
+# Data Paths
+# -----------------------------
+
+paths:
+
+  data_root: "./data"
+
+  genomic_data:
+    "./data/genomic"
+
+  imaging_data:
+    "./data/mri"
+
+  clinical_data:
+    "./data/clinical"
+
+  processed_data:
+    "./data/processed"
+
+  checkpoints:
+    "./results/checkpoints"
+
+  outputs:
+    "./results"
+
+
+
+# -----------------------------
+# Computational Environment
+# -----------------------------
+
+device:
+
+  accelerator: "cuda"
+
+  gpu_id: 0
+
+  num_workers: 8
+
+
+
+# -----------------------------
+# Reproducibility
+# -----------------------------
+
+reproducibility:
+
+  deterministic: true
+
+  random_seeds:
+    - 42
+    - 123
+    - 2025
+
+  cudnn_deterministic: true
+
+
+
+# -----------------------------
+# Logging
+# -----------------------------
+
+logging:
+
+  save_checkpoints: true
+
+  save_predictions: true
+
+  save_attention_maps: true
+
+  save_explainability_results: true
