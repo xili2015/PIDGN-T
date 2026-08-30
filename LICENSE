@@ -1,0 +1,32 @@
+
+
+---
+
+# Dataset Availability
+
+The experiments were conducted using the:
+
+**Parkinson’s Progression Markers Initiative (PPMI) dataset**
+
+PPMI is a longitudinal multi-center Parkinson’s disease dataset containing clinical, imaging, genetic, and biomarker information.
+
+Access to PPMI data requires registration and approval through the official platform:
+
+https://www.ppmi-info.org/
+
+
+Due to data usage restrictions, raw patient-level data are not included in this repository.
+
+
+---
+
+# Installation
+
+## Option 1: Using pip
+
+Clone the repository:
+
+```bash
+git clone https://github.com/username/PIDGN-T.git
+
+cd PIDGN-T
