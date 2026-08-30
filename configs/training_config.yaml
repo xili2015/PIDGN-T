@@ -1,0 +1,181 @@
+# ============================================================
+# PIDGN-T Training Configuration
+# ============================================================
+
+
+training:
+
+
+  epochs: 200
+
+
+  batch_size: 16
+
+
+  optimizer:
+
+    name: "AdamW"
+
+    learning_rate: 0.0001
+
+    weight_decay: 0.0001
+
+
+
+  scheduler:
+
+    name: "CosineAnnealing"
+
+    warmup_epochs: 10
+
+
+
+  early_stopping:
+
+    enabled: true
+
+    patience: 30
+
+
+
+
+# ============================================================
+# Loss Function
+# ============================================================
+
+
+loss:
+
+
+  classification:
+
+    type: "Weighted Binary Cross Entropy"
+
+
+    class_weights:
+
+      PD: 0.699
+
+      Control: 1.755
+
+
+
+  alignment_loss:
+
+    enabled: true
+
+    lambda_align: 0.5
+
+
+
+  temporal_loss:
+
+    enabled: true
+
+    lambda_temporal: 0.3
+
+
+
+  attention_regularization:
+
+    enabled: true
+
+    lambda_attention: 0.1
+
+
+
+  l2_regularization:
+
+    lambda_reg: 0.0001
+
+
+
+
+# ============================================================
+# Cross Validation
+# ============================================================
+
+
+evaluation:
+
+
+  strategy:
+
+    name: "Stratified Subject-Level Cross Validation"
+
+    folds: 5
+
+
+
+  metrics:
+
+
+    - AUC
+
+    - Accuracy
+
+    - F1-score
+
+    - Sensitivity
+
+    - Specificity
+
+
+
+  statistical_test:
+
+
+    method:
+      "Paired statistical test"
+
+
+    correction:
+
+      method: "Bonferroni"
+
+
+
+# ============================================================
+# Robustness Experiments
+# ============================================================
+
+
+robustness:
+
+
+  gaussian_noise:
+
+    enabled: true
+
+    sigma: 0.05
+
+
+
+  missing_modality:
+
+    enabled: true
+
+    masking_ratio: 0.10
+
+
+
+  scanner_variability:
+
+    enabled: true
+
+
+
+
+# ============================================================
+# Inference
+# ============================================================
+
+
+inference:
+
+
+  save_predictions: true
+
+  measure_latency: true
+
+  save_patient_level_time: true
