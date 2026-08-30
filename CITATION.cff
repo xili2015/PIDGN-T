@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+
+message: "If you use this repository, please cite the following work."
+
+title: "PIDGN-T: Explainable Temporal Graph Learning for Multimodal Neurogenetic Data Integration in Early Parkinson’s Disease Prediction"
+
+type: software
+
+authors:
+
+  - family-names: "Alazzam"
+    given-names: "Malik Bader"
+
+  - family-names: "Li"
+    given-names: "Xi"
+
+version: 1.0.0
+
+date-released: 2026-08-30
+
+repository-code: "https://github.com/username/PIDGN-T"
+
+license: MIT
+
+abstract: >
+  PIDGN-T is an explainable temporal graph learning framework
+  for multimodal neurogenetic data integration in early Parkinson's
+  disease prediction using genomic, neuroimaging, and longitudinal
+  clinical information.
