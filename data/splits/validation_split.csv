@@ -1,0 +1,5 @@
+subject_id,group,split,snp_path,mri_path,clinical_path,num_visits,baseline_age,sex
+PPMI_0101,PD,validation,data/genomic/PPMI_0101_snp.csv,data/mri/PPMI_0101_T1.nii.gz,data/clinical/PPMI_0101.csv,5,64,M
+PPMI_0102,Control,validation,data/genomic/PPMI_0102_snp.csv,data/mri/PPMI_0102_T1.nii.gz,data/clinical/PPMI_0102.csv,4,60,F
+PPMI_0103,PD,validation,data/genomic/PPMI_0103_snp.csv,data/mri/PPMI_0103_T1.nii.gz,data/clinical/PPMI_0103.csv,5,67,M
+PPMI_0104,Control,validation,data/genomic/PPMI_0104_snp.csv,data/mri/PPMI_0104_T1.nii.gz,data/clinical/PPMI_0104.csv,3,58,F
