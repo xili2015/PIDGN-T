@@ -47,3 +47,14 @@ The genomic preprocessing pipeline performs:
 3. Autoencoder-based genomic representation learning
 
 The generated latent embeddings are subsequently used as node features for the Gene Interaction Graph in PIDGN-T.
+
+
+## MRI Processing Pipeline
+
+The MRI preprocessing workflow consists of:
+
+1. Intensity normalization and spatial standardization.
+2. Anatomical brain parcellation using predefined atlases.
+3. Deep feature extraction using a 3D residual convolutional encoder.
+
+The extracted regional embeddings are used as node attributes for the Brain Connectome Graph in PIDGN-T.
