@@ -38,3 +38,12 @@ The repository contains:
 # Framework Components
 
 The PIDGN-T framework consists of the following main modules:
+
+### Genomic Preprocessing Pipeline
+
+The genomic preprocessing pipeline performs:
+1. GWAS-informed SNP filtering
+2. Genotype encoding and normalization
+3. Autoencoder-based genomic representation learning
+
+The generated latent embeddings are subsequently used as node features for the Gene Interaction Graph in PIDGN-T.
