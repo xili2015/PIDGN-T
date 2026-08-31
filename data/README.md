@@ -21,3 +21,13 @@ https://www.ppmi-info.org/
 
 ## Directory Organization
 
+## Subject-Level Data Splitting
+
+To prevent information leakage in longitudinal Parkinson’s disease prediction,
+all data splits were performed at the subject level.
+
+All visits belonging to the same participant were assigned exclusively to one
+split (training, validation, or testing).
+
+No longitudinal observation from the test subjects was used during model
+optimization or hyperparameter selection.
