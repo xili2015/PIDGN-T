@@ -31,3 +31,25 @@ split (training, validation, or testing).
 
 No longitudinal observation from the test subjects was used during model
 optimization or hyperparameter selection.
+
+## MRI Processing Pipeline
+
+The MRI preprocessing workflow consists of:
+
+1. Intensity normalization and spatial standardization.
+2. Anatomical brain parcellation using predefined atlases.
+3. Deep feature extraction using a 3D residual convolutional encoder.
+
+The extracted regional embeddings are used as node attributes for the Brain Connectome Graph in PIDGN-T.
+
+
+## Clinical and Behavioral Processing
+
+The clinical preprocessing pipeline performs:
+
+1. Subject-level multimodal synchronization.
+2. Longitudinal visit alignment.
+3. Missing value handling and feature normalization.
+4. Temporal sequence generation for recurrent modeling.
+
+The generated sequences are provided to the Clinical Encoder and subsequently integrated into the Temporal Graph Neural Network (TGNN).
